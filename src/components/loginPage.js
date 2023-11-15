@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
-
+import "./LoginPage.css"
+import { Link ,useNavigate } from 'react-router-dom';
 
 const LoginPage = ({ handleLogin }) => {
   const [username, setUsername] = useState('');
@@ -17,27 +18,33 @@ const LoginPage = ({ handleLogin }) => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='id'>
           <label>아이디 :</label>
-          <input
+          <input className='id_input'
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className='password'>
           <label>패스워드 :</label>
-          <input
+          <input className='pw_input'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">로그인</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <div className='login_button'>
+          <button type="submit">로그인</button>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
+
+        <Link to='/signup' className='sign_up'>Sign Up</Link>
+        <Link to='/' className='home'>Home</Link>
+
       </form>
     </div>
   );

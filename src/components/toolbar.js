@@ -16,7 +16,8 @@ function ColorSchemesExample() {
     <>
       <Navbar style={navbarStyle} variant="light">
         <Container fluid>
-          <Navbar.Brand href="#home" className="mainName">책팔조</Navbar.Brand>
+          
+          <Navbar.Brand href="#home" className="mainName">책판다</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">장바구니</Nav.Link>
             <Nav.Link href="#features"></Nav.Link>
