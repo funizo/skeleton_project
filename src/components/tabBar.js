@@ -1,0 +1,95 @@
+import { Nav } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import magazine from "../data/magazine"
+import learning from '../data/learning';
+import novel from "../data/novel";
+import "react-loading-skeleton/dist/skeleton.css"
+
+
+function TabBar() {
+
+    const [tab, setTab] = useState(0);
+    const [novelData, setNovelData] = useState(novel);
+    const [magazineData, setMagazineData] = useState(magazine);
+    const [learningData, setLearningData] = useState(learning);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <div>
+            <Nav variant="tabs" defaultActiveKey="link0">
+                <Nav.Item>
+                    <Nav.Link onClick={() => { setTab(0) }} eventKey="link0">소설</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link onClick={() => { setTab(1) }} eventKey="link1">학습지</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link onClick={() => { setTab(2) }} eventKey="link2">잡지</Nav.Link>
+                </Nav.Item>
+            </Nav>
+                {loading ? (
+                novelData.map((_, i) => (
+                    <TabContentSkeleton key={i} />
+                ))
+            ) : (
+                novelData.map((a, i) => (
+                    <TabContent key={i} tab={tab} novelData={novelData[i]} magazineData={magazineData[i]} learningData={learningData[i]} i={i} />
+                ))
+            )}
+        </div>
+    )
+}
+
+function TabContentSkeleton() {
+    return (
+        <div className="skeleton-container">
+            <h3 className="skeleton-title"><Skeleton duration={1} width={300} height={100} /></h3>
+            <h3 className="skeleton-title"><Skeleton duration={1} width={300} height={20} /></h3>
+            <p className="skeleton-text"><Skeleton  duration={1} width={80} height={15} /></p>
+            <p className="skeleton-text-small"><Skeleton  duration={1} width={60} height={15} /></p>
+        </div>
+    )
+}
+
+function TabContent(props,i) {
+    if (props.tab === 0) {
+        return (
+            <div>
+                <img src={props.novelData.img} alt=""/>
+                <h3 className='card-title'>{props.novelData.title}</h3>
+                <p>{props.novelData.writer}</p>
+                <p>{props.novelData.price}</p>
+            </div>
+        )
+    }
+    if (props.tab === 1) {
+        return (
+            <div>
+                <img src={props.learningData.img} alt=""/>
+                <h3 className='card-title'>{props.learningData.title}</h3>
+                <p>{props.learningData.writer}</p>
+                <p>{props.learningData.price}</p>
+            </div>
+        )
+    }
+    if (props.tab === 2) {
+        return (
+            <div>
+                <img src={props.magazineData.img} alt=""/>
+                <h3 className='card-title'>{props.magazineData.title}</h3>
+                <p>{props.magazineData.writer}</p>
+                <p>{props.magazineData.price}</p>
+            </div>
+        )
+    }
+}
+
+export default TabBar;
