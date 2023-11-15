@@ -1,0 +1,42 @@
+.year{
+    /* display: flex; */
+}
+.topLogo{
+    margin-top: 10px; 
+    margin-right: -80px;
+    display: flex;
+
+}
+.mainName{
+    text-align: center;
+    margin-left: -230px;
+    margin-right: -180px;
+    display: flex;
+}
+
+  
+  .d-flex{
+    margin-right: -250px;
+    width:400px;
+    height: 50px;
+    display: flex;
+
+  }
+  
+  .join{
+    margin-right: -260px;
+    display: flex;
+  }
+  
+  .login{
+    margin-right: -320px;
+    display: flex;
+  }
+  
+  .mypage{
+    margin-right: -380px;
+    display: flex;
+  }
+  .alarm{
+    display:flex
+  }

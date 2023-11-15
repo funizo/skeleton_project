@@ -1,7 +1,6 @@
 *{
   font-family: "LINESeedKR-Bd";
 }
-
 .carousel-container {
   display: flex;
   align-items: center;
@@ -52,11 +51,15 @@
   font-style: normal;
 }
 
-.footer{
-  margin-left:750px;
-} 
-#footer2{
 
-  padding-bottom: 20px;
-  text-size-adjust: 100px;
+#logo{
+  text-align: center;
+  float: none; 
+  margin: 0 auto;
+  
+}
+#footer2{
+  text-align: center;
+  float: none; 
+  margin: 0 auto;
 } 

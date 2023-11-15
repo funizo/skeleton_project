@@ -9,13 +9,7 @@ function UncontrolledExample() {
         <Carousel.Item>
             <img
               className="d-block w-100"
-              style={{
-                objectFit: 'cover',
-                borderRadius: '15px',
-                transition: 'border-radius 0.5s',
-                maxWidth: '800px',
-                maxHeight: '700px'
-              }}
+              style={{ objectFit: 'cover', borderRadius: '15px', transition: 'border-radius 0.5s' }}
               img src="http://tdinteriorsinc.com/wp-content/uploads/2013/03/landscape-7-800x400.jpg"
               alt="First slide"
             />

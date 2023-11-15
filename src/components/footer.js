@@ -3,8 +3,10 @@ import { Nav, Navbar} from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-            <img src="img/panda.png" width="300" height="350" alt="로고" id='logo'/>
+    <footer>
+        <div id='logo'>
+            <img src="img/panda.png" width="300" height="350" alt="로고"/>
+        </div>
     
     <Navbar>
         <Nav id='footer2'>

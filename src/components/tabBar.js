@@ -5,6 +5,7 @@ import magazine from "../data/magazine"
 import learning from '../data/learning';
 import novel from "../data/novel";
 import "react-loading-skeleton/dist/skeleton.css"
+import './tabBar.css';
 
 
 function TabBar() {
@@ -35,15 +36,21 @@ function TabBar() {
                     <Nav.Link onClick={() => { setTab(2) }} eventKey="link2">잡지</Nav.Link>
                 </Nav.Item>
             </Nav>
-                {loading ? (
-                novelData.map((_, i) => (
-                    <TabContentSkeleton key={i} />
-                ))
-            ) : (
-                novelData.map((a, i) => (
-                    <TabContent key={i} tab={tab} novelData={novelData[i]} magazineData={magazineData[i]} learningData={learningData[i]} i={i} />
-                ))
-            )}
+            <div className="TabBar">
+      {loading ? (
+        novelData.map((_, i) => (
+          <div className="image-container" key={i}>
+            <TabContentSkeleton />
+          </div>
+        ))
+      ) : (
+        novelData.map((a, i) => (
+          <div className="image-container" key={i}>
+            <TabContent key={i} tab={tab} novelData={novelData[i]} magazineData={magazineData[i]} learningData={learningData[i]} i={i} />
+          </div>
+        ))
+      )}
+    </div>
         </div>
     )
 }
@@ -59,13 +66,10 @@ function TabContentSkeleton() {
     )
 }
 
-
-
-
 function TabContent(props,i) {
     if (props.tab === 0) {
         return (
-            <div>
+            <div className='novel'>
                 <img src={props.novelData.img} alt=""/>
                 <h3 className='card-title'>{props.novelData.title}</h3>
                 <p>{props.novelData.writer}</p>
@@ -75,7 +79,7 @@ function TabContent(props,i) {
     }
     if (props.tab === 1) {
         return (
-            <div>
+            <div className='learning'>
                 <img src={props.learningData.img} alt=""/>
                 <h3 className='card-title'>{props.learningData.title}</h3>
                 <p>{props.learningData.writer}</p>
@@ -85,7 +89,7 @@ function TabContent(props,i) {
     }
     if (props.tab === 2) {
         return (
-            <div>
+            <div className='magazine'>
                 <img src={props.magazineData.img} alt=""/>
                 <h3 className='card-title'>{props.magazineData.title}</h3>
                 <p>{props.magazineData.writer}</p>
