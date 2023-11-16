@@ -81,6 +81,8 @@ const SignUpPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
+          
         </div>
         <div>
           <label>비밀번호 확인:</label>
