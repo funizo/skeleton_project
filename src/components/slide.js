@@ -5,6 +5,7 @@ import '../App.css';
 function UncontrolledExample() {
   return (
     <div className='carousel-container'>
+      
       <Carousel className='carousel' interval={3000} style={{ width: '1100px' }}>
         <Carousel.Item>
             <img

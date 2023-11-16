@@ -21,7 +21,7 @@ const magazine = [
         title: '소년중앙 1993년 8월호',
         writer: '중앙일보사',
         price: 7000,
-        img: "/img/magazine/magazine3.jpg"
+        img: "/img/magazine/magazine3.png"
 
     },
     {

@@ -12,11 +12,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <div style={{ margin: '0 200px' }}>
       <Routes>
-        <Route path='/' element={<App />}/>
-        <Route path='login' element={<Login />}/> 
-        <Route path='signup' element={<Signup/>}/>
+      <Route path='/' element={<App />} />
+      <Route path='login' element={<Login />} /> 
+      <Route path='signup' element={<Signup />} /> 
+      {/* <Route path='cart' element={<CartProvider><Cart /></CartProvider>} />  */}
+      {/* <Route path='books' element={<Books />} />  */}
       </Routes>
+      </div>
       
     </BrowserRouter>
     
