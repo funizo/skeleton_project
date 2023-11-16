@@ -5,11 +5,12 @@ const Footer = () => {
   return (
     <footer>
         <div id='logo'>
-            <img src="img/panda.png" width="300" height="350" alt="로고"/>
+            <img src="img/panda.png" width="150" height="150" alt="로고"/>
         </div>
     
     <Navbar>
         <Nav id='footer2'>
+            
             <Nav.Link href="/">이용약관</Nav.Link>
             <Nav.Link href="/">개인정보처리방침</Nav.Link>
             <Nav.Link href="/">청소년보호정책</Nav.Link>

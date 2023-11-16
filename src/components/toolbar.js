@@ -73,7 +73,7 @@ function ColorSchemesExample() {
 
           
           <Nav className="mypage">
-            <Nav.Link href="#home"><img src="img/mypage2.png" width="130" alt="마이페이지"/></Nav.Link>
+            <Nav.Link href="#home"><img src="img/mypage2.png" width="100" alt="마이페이지"/></Nav.Link>
           </Nav>
           <Nav className="alarm">
             <Nav.Link href="#home"><img src="img/alarm.png" width="90" alt="알람"/></Nav.Link>

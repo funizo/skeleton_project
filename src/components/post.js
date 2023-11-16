@@ -1,6 +1,9 @@
 import React from 'react';
 import DaumPostcode from 'react-daum-postcode';
 
+
+//외부라이브러리 주소창검색
+
 const Post = ({ setcompany, onComplete, subaddress }) => {
   const handleComplete = (data) => {
     let fullAddress = data.address;
@@ -15,10 +18,7 @@ const Post = ({ setcompany, onComplete, subaddress }) => {
       }
       fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
     }
-    // console.log(data);
-    // console.log(fullAddress);
-    // console.log(data.zonecode);
-    // console.log(subaddress);
+
 
     // fullAddress + usbaddress 값 input 주소에 추가
     if (subaddress) {

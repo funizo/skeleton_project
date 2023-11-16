@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Login from './components/loginPage'
-import Cart from './components/cart'
 import Signup from './components/signUpPage'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
-import { CartProvider } from './components/cartContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +18,7 @@ root.render(
       <Route path='/' element={<App />} />
       <Route path='login' element={<Login />} /> 
       <Route path='signup' element={<Signup />} /> 
-      <Route path='cart' element={<CartProvider><Cart /></CartProvider>} /> 
+      
       </Routes>
       </div>
 
