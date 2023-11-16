@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Post from './post';
 
 const SignUpPage = () => {
   const [username, setUsername] = useState('');
@@ -7,6 +8,18 @@ const SignUpPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [address, setAddress] = useState('');
+  const [subaddress, setSubaddress] = useState('');
+  const [showAddress, setShowAddress] = useState(false);
+
+  const handleAddressButtonClick = () => {
+    setShowAddress((prevShowAddress) => !prevShowAddress);
+  };
+   // Post 컴포넌트에서 선택한 주소를 처리
+  const handlePostComplete = (data) => {
+    setAddress(data.address);
+    setShowAddress(false); // Post 컴포넌트를 숨김
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +27,7 @@ const SignUpPage = () => {
     if (password !== confirmPassword) {
       setError('비밀번호가 일치하지 않습니다.');
     } else {
-      console.log('가입 정보:', { username, email, password });
+      console.log('가입 정보:', { username, email, password, address, subaddress });
     }
   };
 
@@ -37,6 +50,29 @@ const SignUpPage = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+        </div>
+        <div>
+          <label>주소:</label>
+          <input 
+            className='address'
+            type='text'
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            onClick={handleAddressButtonClick}
+          />
+          <div>
+          <input 
+          className='input-subaddress' 
+            type='text'
+            value={subaddress}
+            onChange={(e) => setSubaddress(e.target.value)}
+            style={{ marginLeft: '45px' }}
+          />
+          </div>
+   
+          {showAddress && (
+            <Post setcompany={{ address: address }} onComplete={handlePostComplete} subaddress={subaddress} />
+          )}
         </div>
         <div>
           <label>비밀번호:</label>

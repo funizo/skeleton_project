@@ -34,7 +34,7 @@ const learning = [
         title: '시멘토 학습지',
         writer: '시멘토',
         price: 6000,
-        img:  "/img/learning/learning5.jfif"
+        img:  "/img/learning/learning5.jpg"
     },
     {
         id : 6,
@@ -48,7 +48,7 @@ const learning = [
         title: '수학독해 D4 통계와 규칙',
         writer: '씨투엠',
         price: 5000,
-        img: "/img/learning/learning7.jfif"
+        img: "/img/learning/learning7.jpg"
     },
     {
         id : 8,
@@ -62,7 +62,7 @@ const learning = [
         title: '오투 중등과학 2-2',
         writer: 'VISANG',
         price: 4000,
-        img:  "/img/learning/learning9.jfif"
+        img:  "/img/learning/learning9.jpg"
     },
     {
         id : 10,

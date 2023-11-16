@@ -32,5 +32,6 @@
     .image-container img {
       width: 100%; /* 이미지를 컨테이너에 꽉 채우기 */
       height: auto; /* 비율 유지 */
+      margin-bottom: 30px;
     }
   }

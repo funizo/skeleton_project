@@ -63,3 +63,10 @@
   float: none; 
   margin: 0 auto;
 } 
+
+.phrase img{
+  height: 250px;
+  width: 60%;
+  margin: auto;
+  display: block;
+}
