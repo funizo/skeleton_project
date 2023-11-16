@@ -65,9 +65,9 @@ function ColorSchemesExample() {
             <Nav.Link href="/signup">회원가입</Nav.Link>
           </Nav>
 
-          <Nav.Item className='login'>
+          <Nav className='login'>
             <Nav.Link href="/login">로그인</Nav.Link>
-          </Nav.Item>
+          </Nav>
           </Form>
 
 
