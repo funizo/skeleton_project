@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      
+
         <Toolbar/>
         <div className='phrase'><img src='img/phrase.png'></img></div>
         <Slide/>

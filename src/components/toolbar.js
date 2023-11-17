@@ -10,7 +10,7 @@ import './toolbar.css';
 
 function ColorSchemesExample() {
   const navbarStyle = {
-    backgroundColor: '#8B8B8B',
+    backgroundColor: 'white',
     color: 'black',
     height: '110px',
   };
@@ -19,18 +19,15 @@ function ColorSchemesExample() {
     <>
       
 
-      <Navbar style={navbarStyle} variant="light">
+      <Navbar className="navBar" style={navbarStyle} variant="light">
         <Container fluid>
 
-          <Nav className="buying">
+          <Nav className="nav-container">
+
           <Nav.Link href="#home">찾아줘</Nav.Link>
-          </Nav>
 
-          <Nav className="freeBie">
           <Nav.Link href="#home">나눠요</Nav.Link>
-          </Nav>
 
-          <Nav className="community">
           <Nav.Link href="#home">공유해요</Nav.Link>
           </Nav>
 
@@ -57,18 +54,16 @@ function ColorSchemesExample() {
                 className="me-2 search-input"
                 aria-label="Search"
               />
-              <Button variant="outline-light search-button">
+              <Button className="searchbutton" variant="outline-light search-button">
                 <BiSearch />
               </Button>
             </InputGroup>
-              <Nav className="join">
+             
+          </Form>
+          <Nav className="join">
             <Nav.Link href="/signup">회원가입</Nav.Link>
-          </Nav>
-
-          <Nav className='login'>
             <Nav.Link href="/login">로그인</Nav.Link>
           </Nav>
-          </Form>
 
 
           

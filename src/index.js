@@ -4,25 +4,37 @@ import './index.css';
 import App from './App';
 import Login from './components/loginPage'
 import Signup from './components/signUpPage'
+import Novel from './components/novelContent'
+import Category from './components/category'
+import Detail from './components/detail'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
     <BrowserRouter>
-      <div style={{ margin: '0 250px' }}>
+      
       <Routes>
       <Route path='/' element={<App />} />
-      <Route path='login' element={<Login />} /> 
-      <Route path='signup' element={<Signup />} /> 
-      
+      <Route path='/login' element={<Login />} /> 
+      <Route path='/signup' element={<Signup />} /> 
+      <Route path='/category' element={<Category />} >
+        <Route path='novel' element={<Novel />}>
+        <Route path='detail' element={<Detail />} />
+        </Route>
+      </Route>
+
+      <Route path='*' element={<div>없는페이지에요</div>}/>
       </Routes>
-      </div>
+      
 
     </BrowserRouter>
+    
   </React.StrictMode>
 );
 

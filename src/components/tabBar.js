@@ -4,6 +4,8 @@ import Skeleton from 'react-loading-skeleton';
 import magazine from "../data/magazine"
 import learning from '../data/learning';
 import novel from "../data/novel";
+import { useNavigate } from 'react-router-dom';
+import { Routes,Route } from "react-router-dom";
 import "react-loading-skeleton/dist/skeleton.css"
 import './tabBar.css';
 
@@ -11,15 +13,19 @@ import './tabBar.css';
 function TabBar() {
 
     const [tab, setTab] = useState(0);
+    const navigate = useNavigate()
     const [novelData, setNovelData] = useState(novel);
     const [magazineData, setMagazineData] = useState(magazine);
     const [learningData, setLearningData] = useState(learning);
     const [loading, setLoading] = useState(true);
+    const goToBookDetail = (bookData) => {
+        navigate('detail', { state: { bookData } });
+    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 10);
         return () => clearTimeout(timer);
     }, []);
 
@@ -45,15 +51,19 @@ function TabBar() {
         ))
       ) : (
         novelData.map((a, i) => (
-          <div className="image-container" key={i}>
-            <TabContent key={i} tab={tab} novelData={novelData[i]} magazineData={magazineData[i]} learningData={learningData[i]} i={i} />
-          </div>
-        ))
+            <div className="image-container" key={i} onClick={() => goToBookDetail(novelData[i])}>
+              <TabContent key={i} tab={tab} novelData={novelData[i]} magazineData={magazineData[i]} learningData={learningData[i]} i={i} />
+            </div>
+          ))
       )}
     </div>
         </div>
     )
 }
+
+// 1.각 아이템을 누르면
+// 2.카테고리/아이템id 로 주소변환이 되면서
+// 3.내용출력
 
 function TabContentSkeleton() {
     return (
@@ -67,6 +77,7 @@ function TabContentSkeleton() {
 }
 
 function TabContent(props,i) {
+    
     if (props.tab === 0) {
         return (
             <div className='novel'>

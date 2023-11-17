@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
         <div id='logo'>
-            <img src="img/panda.png" width="150" height="150" alt="로고"/>
+            <img src="img/panda.png" width="200" height="230" alt="로고"/>
         </div>
     
     <Navbar>
