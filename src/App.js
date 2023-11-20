@@ -7,7 +7,7 @@ import Footer from './components/footer'
 
 function App() {
 
-  
+//시작
 
   return (
     <div className="App">
