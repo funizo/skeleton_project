@@ -13,7 +13,6 @@ const novel = [
         writer: '박용건',
         price: 7000,
         img: "/img/novel/novel2.jpg"
-
     },
     {
         id : 3,

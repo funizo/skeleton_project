@@ -1,7 +1,6 @@
 .container{
     text-align: center;
     align-items: center;
-    margin-top: 10%;
     width: 500px;
     height: auto;
     border: solid 3px black;
@@ -25,10 +24,18 @@
     text-decoration: none;
     color: blue;
     font-size: x-large; 
+    align-items: center;
 }
 .home{
     text-decoration: none;
     color: black;
-    margin-left: 20px;
     font-size: x-large;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 50px;
 }

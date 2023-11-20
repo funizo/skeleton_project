@@ -18,6 +18,7 @@ const LoginPage = ({ handleLogin }) => {
   };
 
   return (
+    <div> <Link to='/' className='logo'><img src="img/logo.png" width="150" height="200" alt="로고"/></Link>
     <div className='container'>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
@@ -46,6 +47,7 @@ const LoginPage = ({ handleLogin }) => {
         <Link to='/' className='home'>Home</Link>
 
       </form>
+    </div>
     </div>
   );
 };

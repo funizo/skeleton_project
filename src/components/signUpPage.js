@@ -33,6 +33,7 @@ const SignUpPage = () => {
   };
 
   return (
+    <div><Link to='/' className='logo'><img src="img/logo.png" width="150" height="200" alt="로고"/></Link>
     <div className='container'>
       <h2>회원가입</h2>
       <form onSubmit={handleSubmit}>
@@ -97,6 +98,7 @@ const SignUpPage = () => {
         <Link to='/login'>이미 계정이 있으신가요? 로그인</Link>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
+    </div>
     </div>
   );
 };
