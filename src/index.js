@@ -20,14 +20,13 @@ root.render(
     <BrowserRouter>
       
       <Routes>
-      <Route path='/' element={<App />} />
-      <Route path='/login' element={<Login />} /> 
-      <Route path='/signup' element={<Signup />} /> 
-      <Route path='/category' element={<Category />} >
-        <Route path='novel' element={<Novel />}>
-        <Route path='detail' element={<Detail />} />
-        </Route>
-      </Route>
+        <Route path='/' element={<App />} />
+        <Route path='/login' element={<Login />} /> 
+        <Route path='/signup' element={<Signup />} /> 
+        <Route path='/category' element={<Category />} />
+        <Route path='/category/novel' element={<Novel />} />
+        <Route path='/category/novel/detail/:id' element={<Detail />}/>
+        
 
       <Route path='*' element={<div>없는페이지에요</div>}/>
       </Routes>

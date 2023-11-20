@@ -1,27 +1,25 @@
 import novel from '../data/novel'
 import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import "react-loading-skeleton/dist/skeleton.css"
 import Skeleton from 'react-loading-skeleton';
-import { Route, Routes,Link ,useNavigate,Outlet } from 'react-router-dom'
-
-
 
 function NovelContent() {
-    const navigate = useNavigate();
+    const navigate  = useNavigate();
     const [novelData, setNovelData] = useState(novel);
     const [loading, setLoading] = useState(true);
-    const handle = () => {
-        navigate("detail")
-        console.log(novelData)
-    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 10);
         return () => clearTimeout(timer);
     }, []);
 
+    const goToBookDetail = (id, bookData) => {
+        navigate(`/category/novel/detail/${id}`, { state: { bookData } });
+        console.log('bookData',id)
+    }
 
     return(
         
@@ -34,14 +32,14 @@ function NovelContent() {
         ))
       ) : (
         novelData.map((a, i) => (
-            <div className="image-container" key={i} onClick={handle}>
+            <div className="image-container" key={i} onClick={() => goToBookDetail(a.id, a)}>
+            {/* <Link to={`././detail/${a.id}`} key={a.id}> */}
               <TabContent key={i} novelData={novelData[i]} i={i} />
-            </div>
-          ))
-          )}
-
-
+            {/* </Link> */}
+          </div>
           
+          ))
+      )}
         </div>
     )
 }
