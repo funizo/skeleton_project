@@ -97,17 +97,17 @@ function TabContent(props,i) {
                 <p>{props.learningData.price}</p>
             </div>
         )
+        }
+        if (props.tab === 2) {
+            return (
+                <div className='magazine'>
+                    <img src={props.magazineData.img} alt=""/>
+                    <h3 className='card-title'>{props.magazineData.title}</h3>
+                    <p>{props.magazineData.writer}</p>
+                    <p>{props.magazineData.price}</p>
+                </div>
+            )
+        }
     }
-    if (props.tab === 2) {
-        return (
-            <div className='magazine'>
-                <img src={props.magazineData.img} alt=""/>
-                <h3 className='card-title'>{props.magazineData.title}</h3>
-                <p>{props.magazineData.writer}</p>
-                <p>{props.magazineData.price}</p>
-            </div>
-        )
-    }
-}
 
-export default TabBar;
+    export default TabBar;
